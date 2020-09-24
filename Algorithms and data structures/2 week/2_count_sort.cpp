@@ -1,15 +1,16 @@
-﻿#include <vector>
+#include <vector>
 #include <iostream>
 using namespace std;
-
+ 
+const int M = 101;
+ 
 vector <int> countSort(vector <int> a) {
-	const int count = 100;
 	int i, j = 0;
-	vector<int> cnt(count, 0);
+	vector<int> cnt(M, 0);
 	for (i = 0; i < a.size(); i++) {
 		cnt[a[i]]++;
 	}
-	for (i = 0; i < count; i++) {
+	for (i = 0; i < M; i++) {
 		while (cnt[i] > 0) {
 			a[j++] = i;
 			cnt[i]--;
@@ -17,11 +18,11 @@ vector <int> countSort(vector <int> a) {
 	}
 	return a;
 }
-
+ 
 int main() {
 	int i, buf;
 	vector <int> a;
-	while(cin.peek() != '\n') {
+	while (cin.peek() != '\n') {
 		cin >> buf;
 		a.push_back(buf);
 	}
@@ -30,4 +31,3 @@ int main() {
 		cout << a[i] << " ";
 	}
 }
-
