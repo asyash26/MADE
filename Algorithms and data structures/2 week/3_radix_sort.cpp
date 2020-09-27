@@ -4,9 +4,10 @@
 using namespace std;
  
 const int CNT_LENGTH = 27;
+const int GAP = int('a');
  
 int getDigit(string str, int strLength, int digitNumber) {
-	return int(str.substr(strLength - digitNumber - 1, strLength - digitNumber)[0]) - 97;
+	return int(str.substr(strLength - digitNumber - 1, strLength - digitNumber)[0]) - GAP;
 }
  
 vector<string> radixSort(vector<string> a, int n, int m, int k) {
